@@ -1,10 +1,14 @@
-import { useRef, useState, useEffect } from "react"; // MODIFIED
+import { useRef, useState, useEffect } from "react";
 import Card from "../components/Card.jsx";
 import { Globe } from "../components/globe.jsx";
 import CopyEmailButton from "../components/CopyEmailButton.jsx";
 import { Frameworks } from "../components/FrameWorks.jsx";
 import { FlipWords } from "../components/FlipWords.jsx";
-import { motion } from "framer-motion"; // Import motion
+import { motion } from "framer-motion";
+import {
+  TypewriterEffect,
+  TypewriterLoop,
+} from "../components/TypeWritter.jsx";
 
 const About = () => {
   const grid2Container = useRef();
@@ -16,6 +20,32 @@ const About = () => {
     "Problem Solver",
     "AWS Enthusiast",
   ];
+
+  // Words for the gradient heading
+  const stackHeadingWords = [
+    { text: "My" },
+    { text: "Tech" },
+    { text: "Stack" },
+  ];
+
+  // For the new "type-erase-repeat" animation
+  const stackSkills = [
+    "Java",
+    "Spring Boot",
+    "AWS",
+    "Docker",
+    "Kubernetes",
+    "React",
+    "Tailwind CSS",
+    "System Design",
+    "Microservices",
+    "CI/CD Pipelines",
+    "GitHub Actions",
+    "AI Agents",
+    "Git & GitHub",
+    "Mongo DB",
+  ];
+
 
   // Variants for Grid 2 Stagger Animation
   const containerVariants = {
@@ -233,20 +263,45 @@ const About = () => {
             <CopyEmailButton />
           </div>
         </div>
-        {/* Grid 5 */}
-        <div className="grid-default-color grid-5">
-          <div className="z-10 w-[50%]">
-            <p className="headText">Tech Stack</p>{" "}
-            {/* Note: Typo in "Teck", inherited from original */}
-            <p className="subtext">
-              I specialize in a variety of languages, frameworks, and tools that
-              allow me to build robust and scalable applications
+        {/* --- GRID 5 - DYNAMIC TECH STACK (UPDATED) --- */}
+        <motion.div
+          className="grid-default-color grid-5"
+          variants={cardVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          {/* Left Side: Text and Dynamic Skills */}
+          {/* UPDATED LAYOUT: `w-full md:w-1/2` and `p-6` for better spacing */}
+          <div className="z-10 w-full md:w-1/2 flex flex-col justify-center p-6">
+            {/* Heading using TypewriterEffect */}
+            <TypewriterEffect
+              words={stackHeadingWords}
+              className="text-left text-2xl md:text-3xl lg:text-4xl font-bold text-gradient" // <-- APPLIED GRADIENT
+              cursorClassName="bg-cyan-400"
+            />
+
+            <p className="subtext mt-6">
+              Core technologies I use to build robust, scalable applications:
             </p>
+
+            {/* Dynamic skills using TypewriterLoop */}
+            {/* Added `h-16` to give space for long words like "CI/CD Pipelines" */}
+            <div className="text-2xl md:text-3xl font-bold text-gradient mt-4 h-16">
+              <TypewriterLoop
+                words={stackSkills}
+                cursorClassName="bg-cyan-400"
+                className="text-gradient" // <-- APPLIED GRADIENT
+              />
+            </div>
           </div>
+
+          {/* Right Side: Revolving Frameworks (No Changes) */}
           <div className="absolute inset-y-0 md:inset-y-9 w-full h-full start-[50%] md:scale-125">
             <Frameworks />
           </div>
-        </div>
+        </motion.div>
+        {/* --- END OF GRID 5 --- */}
       </div>
     </section>
   );

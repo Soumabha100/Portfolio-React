@@ -1,6 +1,7 @@
 import React from "react";
 import { FlipWords } from "./FlipWords";
 import { motion } from "framer-motion";
+import { AuroraText } from "./AuroraText";
 
 const words = [
   "Scalable",
@@ -31,7 +32,7 @@ const HeroText = () => {
             {...fadeInUp}
             className="text-5xl lg:text-6xl font-bold bg-linear-to-r from-white to-gray-300 bg-clip-text text-transparent"
           >
-            Hi, I'm Soumabha
+            Hi, I'm <AuroraText>Soumabha</AuroraText>
           </motion.h1>
 
           <motion.div
@@ -70,7 +71,7 @@ const HeroText = () => {
       >
         <div className="space-y-4">
           <h1 className="text-4xl font-bold bg-linear-to-r from-white to-gray-300 bg-clip-text text-transparent">
-            Hi, I'm Soumabha
+            Hi, I'm <AuroraText>Soumabha</AuroraText>
           </h1>
           <p className="text-2xl font-medium text-neutral-300">
             Aspiring Backend Software Engineer
