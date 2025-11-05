@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react"; // MODIFIED
 import Card from "../components/Card.jsx";
 import { Globe } from "../components/globe.jsx";
 import CopyEmailButton from "../components/CopyEmailButton.jsx";
@@ -32,6 +32,36 @@ const About = () => {
     hidden: { opacity: 0, y: 30 }, // Start 30px down and faded out
     visible: { opacity: 1, y: 0 }, // Animate to original position and faded in
   };
+
+  // --- NEW CODE START ---
+  // Logic for the live clock
+  const [time, setTime] = useState(new Date());
+
+  useEffect(() => {
+    // Set up an interval to update the time every second
+    const timerId = setInterval(() => {
+      setTime(new Date());
+    }, 1000);
+
+    // Clean up the interval when the component unmounts
+    return () => {
+      clearInterval(timerId);
+    };
+  }, []); // Empty dependency array means this effect runs only once on mount
+
+  // Function to format the time to IST (Asia/Kolkata)
+  const formatTime = (date) => {
+    return date.toLocaleTimeString("en-US", {
+      timeZone: "Asia/Kolkata",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: true,
+    });
+  };
+
+  const localTime = formatTime(time);
+  // --- NEW CODE END ---
 
   return (
     <section className="c-space section-spacing" id="about">
@@ -144,18 +174,56 @@ const About = () => {
             />
           </motion.div>
         </div>
-        {/* Grid 3 */}
-        <div className="grid-black-color grid-3">
-          <div className="z-10 w-[50%]">
-            <p className="headtext">Time Zone</p>
-            <p className="subtext">
-              I'm based in Kolkata, India, and open to remote work worldwide
+        {/* --- GRID 3 - VISUALLY UPGRADED --- */}
+        <motion.div
+          className="grid-black-color grid-3 flex flex-col justify-between p-4" // Use flex-col and add padding
+          variants={cardVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          {/* Top Section: Text and Time */}
+          <div className="z-10 w-full">
+            {/* Dynamic Heading */}
+            <div className="flex items-center gap-2 mb-2">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-cyan-500"></span>
+              </span>
+              <p className="headtext mb-0">Live Status</p>
+            </div>
+
+            <p className="subtext mb-3">Based in Kolkata, India (GMT+5:30)</p>
+
+            {/* Live Time with Pulse Animation */}
+            <p className="text-sm text-neutral-400 mb-1">Local Time:</p>
+            <div
+              className="text-2xl md:text-3xl font-bold text-cyan-400 font-mono animate-pulse" // Added animate-pulse
+              suppressHydrationWarning // Prevents React hydration error
+            >
+              {localTime}
+            </div>
+
+            <p className="subtext pr-4 mt-3">
+              Open for remote work with <br /> International oppurtunities
             </p>
           </div>
-          <figure className="absolute left-[30%] top-[10%]">
-            <Globe />
-          </figure>
-        </div>
+
+          {/* Bottom Section: Globe and Ping */}
+          <div className="relative z-0 w-full flex items-center justify-center min-h-[8rem] md:min-h-[10rem]">
+            {/* Globe - positioned in the background */}
+            <div className="absolute w-full max-w-[200px] md:max-w-[250px] aspect-square">
+              <Globe />
+            </div>
+
+            {/* Ping Animation - centered on top */}
+            <div className="relative w-4 h-4 z-10">
+              <div className="absolute inset-0 bg-cyan-400 rounded-full opacity-75 animate-ping"></div>
+              <div className="relative w-4 h-4 bg-cyan-500 rounded-full border-2 border-white"></div>
+            </div>
+          </div>
+        </motion.div>
+        {/* --- END OF GRID 3 --- */}
         {/* Grid 4 */}
         <div className="grid-special-color grid-4">
           <div className="flex flex-col items-center justify-center gap-4 size-full">
