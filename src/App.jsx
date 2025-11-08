@@ -5,6 +5,7 @@ import About from './Sections/About'
 import Projects from './Sections/Projects'
 import Experiences from './Sections/Experiences'
 import Contact from './Sections/Contact'
+import Footer from './Sections/Footer'
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <Projects/>
       <Experiences/>
       <Contact/>
+      <Footer/>
       
     </div>
   )
