@@ -225,19 +225,19 @@ export const myProjects = [
 
 export const mySocials = [
   {
-    name: "WhatsApp",
-    href: "",
-    icon: "/assets/socials/whatsApp.svg",
+    name: "GitHub",
+    href: "https://github.com/Soumabha100",
+    icon: "/assets/socials/github.svg",
   },
   {
     name: "Linkedin",
-    href: "https://www.linkedin.com/in/ali-sanati/",
+    href: "https://www.linkedin.com/in/soumabha100/",
     icon: "/assets/socials/linkedIn.svg",
   },
   {
-    name: "Instagram",
-    href: "https://www.instagram.com/ali.sanatidev/reels/",
-    icon: "/assets/socials/instagram.svg",
+    name: "X",
+    href: "https://x.com/soumabha100",
+    icon: "/assets/socials/X.svg",
   },
 ];
 
@@ -245,7 +245,8 @@ export const experiences = [
   {
     title: "Software Developer",
     job: "Security & Defense Projects",
-    date: "2021-2023",
+    year: "2021-2023", // Renamed from 'date'
+    duration: "May 2021 - October 2023", // New field for months
     contents: [
       "Enhanced application security and developed new features, adhering to standards set by the Passive Defense Organization and National Cyberspace Center.",
       "Designed and implemented intuitive map interfaces using MapsUI, enhancing user experience and enabling seamless interactive map integration.",
@@ -257,7 +258,8 @@ export const experiences = [
   {
     title: "Back-End Developer",
     job: "Car Manufacture",
-    date: "2023-2024",
+    year: "2023-2024", // Renamed from 'date'
+    duration: "November 2023 - December 2024", // New field for months
     contents: [
       "Engineered systems for large-scale data ingestion and analysis, ensuring efficient data processing and storage.",
       "Developed back-end systems enabling vehicle-to-cloud communication for telemetry, diagnostics, and remote control:",
@@ -269,7 +271,8 @@ export const experiences = [
   {
     title: "Freelance Developer",
     job: "Self-Employed",
-    date: "2025-Present",
+    year: "2025-Present", // Renamed from 'date'
+    duration: "January 2025 - Present", // New field for months
     contents: [
       "Created a personal portfolio using Three.js, React, Vite, and WebAPI to showcase technical expertise.",
       "Continuously enhancing technical skills and expanding expertise in modern web development and back-end technologies.",
