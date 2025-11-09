@@ -5,6 +5,7 @@ import CopyEmailButton from "../components/CopyEmailButton.jsx";
 import { Frameworks } from "../components/FrameWorks.jsx";
 import { FlipWords } from "../components/FlipWords.jsx";
 import { motion } from "framer-motion";
+import { mySocials } from "../constants/index.js";
 import {
   TypewriterEffect,
   TypewriterLoop,
@@ -45,7 +46,6 @@ const About = () => {
     "Git & GitHub",
     "Mongo DB",
   ];
-
 
   // Variants for Grid 2 Stagger Animation
   const containerVariants = {
@@ -254,15 +254,74 @@ const About = () => {
           </div>
         </motion.div>
         {/* --- END OF GRID 3 --- */}
-        {/* Grid 4 */}
-        <div className="grid-special-color grid-4">
-          <div className="flex flex-col items-center justify-center gap-4 size-full">
-            <p className="text-center headtext">
-              Do you want to start a project together?
-            </p>
-            <CopyEmailButton />
+        {/* Grid 4 - Enhanced Contact Section */}
+        <motion.div
+          className="grid-special-color grid-4 overflow-hidden relative"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          {/* Background Gradient Effect */}
+          <div className="absolute inset-0 bg-linear-to-br from-purple-600/20 to-transparent" />
+
+          <div className="relative flex flex-col items-center justify-center h-full p-4 md:p-6">
+            {/* Heading with Animation */}
+            <motion.h3
+              className="text-lg md:text-2xl lg:text-3xl font-bold text-white leading-tight mb-4 md:mb-6"
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+            >
+              Let's Create Something{" "}
+              <span className="bg-linear-to-r from-purple-400 to-cyan-400 text-transparent bg-clip-text">
+                Amazing
+              </span>
+            </motion.h3>
+
+            {/* Email Button */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, duration: 0.5 }}
+              className="w-full max-w-[280px] mx-auto mb-4"
+            >
+              <CopyEmailButton
+                email="soumabhamajumder@gmail.com"
+                className="text-sm text-white md:text-base"
+              />
+            </motion.div>
+
+            {/* Social Links */}
+            <motion.div
+              className="flex justify-center gap-4 mt-2"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6, duration: 0.5 }}
+            >
+              {mySocials.map((social) => (
+                <motion.a
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-center w-10 h-10 rounded-full bg-black/30 hover:bg-purple-500/20 transition-all duration-300"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <img
+                    src={social.icon}
+                    alt={social.name}
+                    className="w-5 h-5 group-hover:scale-110 transition-transform duration-300"
+                  />
+                </motion.a>
+              ))}
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
         {/* --- GRID 5 - DYNAMIC TECH STACK (UPDATED) --- */}
         <motion.div
           className="grid-default-color grid-5"

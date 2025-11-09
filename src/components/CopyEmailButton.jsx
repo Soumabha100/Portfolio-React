@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
-const CopyEmailButton = () => {
+import { AnimatePresence, motion } from "framer-motion";
+const CopyEmailButton = ({ email, className = "" }) => {
   const [copied, setCopied] = useState(false);
-  const email = "soumabhamajumder@gmail.com";
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(email);
@@ -15,35 +14,37 @@ const CopyEmailButton = () => {
   return (
     <motion.button
       onClick={copyToClipboard}
-      whileHover={{ y: -5 }}
-      whileTap={{ scale: 1.05 }}
-      className="relative px-1 py-4 text-sm text-center rounded-full font-extralight bg-primary w-[12rem] cursor-pointer overflow-hidden"
+      whileHover={{ scale: 1.02 }}
+      className={`group relative flex items-center w-full py-2 text-neutral-300 hover:text-cyan-400 transition-colors duration-300 ${className}`}
     >
       <AnimatePresence mode="wait">
         {copied ? (
-          <motion.p
-            className="flex items-center justify-center gap-2"
+          <motion.div
+            className="flex items-center gap-2 w-full"
             key="copied"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.1, ease: "easeInOut" }}
-          >
-            <img src="assets/copy-done.svg" className="w-5" alt="copy Icon" />
-            Email has Copied
-          </motion.p>
-        ) : (
-          <motion.p
-            className="flex items-center justify-center gap-2"
-            key="copy"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.1 }}
           >
-            <img src="assets/copy.svg" className="w-5" alt="copy icon" />
-            Copy Email Address
-          </motion.p>
+            <span className="text-center">{email}</span>
+            <span className="text-green-400">(Copied!)</span>
+          </motion.div>
+        ) : (
+          <motion.div
+            className="flex items-center w-full"
+            key="normal"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <span className="text-left flex-1">{email}</span>
+            <motion.span
+              className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+              aria-hidden="true"
+            >
+              Copy
+            </motion.span>
+          </motion.div>
         )}
       </AnimatePresence>
     </motion.button>

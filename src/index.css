@@ -204,3 +204,10 @@ body {
     background-position: 0% 0%;
   }
 }
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+    @apply scroll-pt-20; 
+  }
+}

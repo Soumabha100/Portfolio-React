@@ -335,3 +335,22 @@ export const reviews = [
     img: "https://robohash.org/eve",
   },
 ];
+
+export const navLinks = [
+  {
+    id: "home", // This "id" must match the section's id in your App.jsx
+    title: "Home",
+  },
+  {
+    id: "about",
+    title: "About",
+  },
+  {
+    id: "work",
+    title: "Work",
+  },
+  {
+    id: "contact",
+    title: "Contact",
+  },
+];

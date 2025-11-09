@@ -69,7 +69,10 @@ const Contact = () => {
   };
 
   return (
-    <section className="relative flex flex-col items-center justify-center c-space section-spacing">
+    <section
+      className="relative flex flex-col items-center justify-center c-space section-spacing"
+      id="contact"
+    >
       <Particles
         className="absolute inset-0 -z-50"
         quantity={100}
@@ -132,7 +135,7 @@ const Contact = () => {
                 </div>
                 {/* Email */}
                 <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 bg-black/30 rounded-full flex items-center justify-center">
+                  <div className="w-10 h-10 bg-black/30 rounded-full flex items-center justify-center flex-shrink-0">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
@@ -143,10 +146,8 @@ const Contact = () => {
                       <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
                     </svg>
                   </div>
-                  <div className="cursor-pointer" onClick={CopyEmailButton}>
-
-                  {myEmail}
-                  {/* <CopyEmailButton email={myEmail} /> */}
+                  <div className="flex-1 min-w-0">
+                    <CopyEmailButton email={myEmail} className="!px-0" />
                   </div>
                 </div>
               </div>

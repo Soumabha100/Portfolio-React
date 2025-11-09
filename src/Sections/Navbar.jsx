@@ -1,30 +1,74 @@
 import React, { useState } from "react";
-// --- THIS IS THE FIX ---
-// AnimatePresence was missing from this import
-import { motion, AnimatePresence } from "framer-motion"; 
 
-// 1. Accept 'setIsOpen' as a prop
+import { motion, AnimatePresence } from "framer-motion";
+
+// Navigation component with smooth scroll
 function Navigation({ setIsOpen }) {
+  const handleNavClick = (e, targetId) => {
+    e.preventDefault();
+    const targetElement = document.querySelector(targetId);
+
+    if (targetElement) {
+      const navHeight = 80; // Adjust this value based on your navbar height
+      const targetPosition =
+        targetElement.getBoundingClientRect().top + window.scrollY - navHeight;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth",
+      });
+
+      // Wait for scroll to complete before closing menu
+      const checkIfScrollComplete = setInterval(() => {
+        if (Math.abs(window.scrollY - targetPosition) < 2) {
+          clearInterval(checkIfScrollComplete);
+          setIsOpen(false);
+        }
+      }, 100);
+
+      // Failsafe: close menu after 1.5s if scroll hasn't completed
+      setTimeout(() => {
+        clearInterval(checkIfScrollComplete);
+        setIsOpen(false);
+      }, 1500);
+    }
+  };
+
   return (
     <ul className="nav-ul">
       <li className="nav-li">
-        {/* 2. Add onClick to all links */}
-        <a className="nav-link" href="#home" onClick={() => setIsOpen(false)}>
+        <a
+          className="nav-link"
+          href="#home"
+          onClick={(e) => handleNavClick(e, "#home")}
+        >
           Home
         </a>
       </li>
       <li className="nav-li">
-        <a className="nav-link" href="#about" onClick={() => setIsOpen(false)}>
+        <a
+          className="nav-link"
+          href="#about"
+          onClick={(e) => handleNavClick(e, "#about")}
+        >
           About
         </a>
       </li>
       <li className="nav-li">
-        <a className="nav-link" href="#work" onClick={() => setIsOpen(false)}>
+        <a
+          className="nav-link"
+          href="#work"
+          onClick={(e) => handleNavClick(e, "#work")}
+        >
           Work
         </a>
       </li>
       <li className="nav-li">
-        <a className="nav-link" href="#contact" onClick={() => setIsOpen(false)}>
+        <a
+          className="nav-link"
+          href="#contact"
+          onClick={(e) => handleNavClick(e, "#contact")}
+        >
           Contact
         </a>
       </li>
@@ -32,10 +76,11 @@ function Navigation({ setIsOpen }) {
   );
 }
 
+// --- THIS COMPONENT BELOW IS UNCHANGED ---
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="fixed insert-x-0 z-20 w-full backdrop-blur-lg bg-primary/40">
+    <div className="fixed inset-x-0 z-20 w-full backdrop-blur-lg bg-primary/40">
       <div className="mx-auto c-space max-w-7xl">
         <div className="flex items-center justify-between py-2 sm:py-0">
           <a
@@ -50,7 +95,7 @@ const Navbar = () => {
             className="flex cursor-pointer text-neutral-400 hover:text-white focus:outline-none sm:hidden"
           >
             <img
-              src={isOpen ? "assets/close.svg" : "assets/menu.svg"}
+              src={isOpen ? "/assets/close.svg" : "/assets/menu.svg"}
               className="h-6 w-6"
               alt="toggle"
             />
