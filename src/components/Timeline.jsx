@@ -61,7 +61,7 @@ export const Timeline = ({ data = [] }) => {
               </div>
 
               {/* RIGHT COLUMN (Mobile & Desktop) */}
-              <div className="relative w-full pl-16 md:pl-12 md:w-2/3 lg:w-3/4">
+              <div className="relative w-full pl-16 md:pl-12 md:w-2/css-0 lg:w-3/4">
                 {/* Mobile Date (top of card): Reads from 'item?.year' */}
                 <div className="block mb-4 text-left text-neutral-300 md:hidden">
                   <h3 className="text-3xl font-bold">{item?.year}</h3>
@@ -80,14 +80,22 @@ export const Timeline = ({ data = [] }) => {
                   {item?.duration}
                 </p>
 
-                {/* Content Paragraphs */}
+                {/* --- IMPROVEMENT: Content Paragraphs --- */}
                 {Array.isArray(item?.contents) &&
                   item.contents.map((content, idx) => (
                     <p
                       className="mb-3 font-normal text-neutral-400"
                       key={`${index}-${idx}`}
                     >
-                      {content}
+                      {/* Check if the line is a key achievement */}
+                      {content.startsWith("✅") ? (
+                        <>
+                          <span className="text-cyan-400">{content.slice(0, 2)}</span>
+                          {content.slice(2)}
+                        </>
+                      ) : (
+                        content
+                      )}
                     </p>
                   ))}
               </div>
@@ -97,7 +105,7 @@ export const Timeline = ({ data = [] }) => {
         {/* THE LINE */}
         <div
           style={{
-            height: height + "px",
+            height: isClient ? height + "px" : "auto", // Use state for height
           }}
           className="absolute left-8 md:left-1/3 lg:left-1/4 top-0 overflow-hidden w-0.5 bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-0% via-neutral-700 to-transparent to-99% mask-[linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
         >

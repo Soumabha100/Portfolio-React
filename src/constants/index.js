@@ -10,7 +10,8 @@ export const myProjects = [
       "Designed a responsive frontend with Tailwind CSS, enhancing user experience.",
       "Added payment systems, localization, and product filtering for functionality improvements.",
     ],
-    href: "",
+    githubUrl: "#", // Renamed from href
+    liveUrl: "https://github.com/soumabha100/portfolio-react",   // Added new prop
     logo: "",
     image: "/assets/projects/accessories.jpg",
     tags: [
@@ -47,7 +48,8 @@ export const myProjects = [
       "Developed a React-based frontend with Tailwind CSS for a sleek user experience.",
       "Connected to a secure SQLite database for user data storage.",
     ],
-    href: "",
+    githubUrl: "#", // Renamed from href
+    liveUrl: "#",   // Added new prop
     logo: "",
     image: "/assets/projects/auth-system.jpg",
     tags: [
@@ -84,7 +86,8 @@ export const myProjects = [
       "Designed responsive UI components with Tailwind CSS for an enhanced UX.",
       "Integrated SQLite for efficient client-side database storage.",
     ],
-    href: "",
+    githubUrl: "#", // Renamed from href
+    liveUrl: "#",   // Added new prop
     logo: "",
     image: "/assets/projects/blazor-app.jpg",
     tags: [
@@ -121,7 +124,8 @@ export const myProjects = [
       "Implemented a scripting system for easy game customization.",
       "Optimized performance with multi-threading and efficient memory management.",
     ],
-    href: "",
+    githubUrl: "#", // Renamed from href
+    liveUrl: "#",   // Added new prop
     logo: "",
     image: "/assets/projects/game-engine.jpg",
     tags: [
@@ -158,7 +162,8 @@ export const myProjects = [
       "Optimized SEO and page speed using Vite.js for fast builds.",
       "Implemented custom widgets and plugin compatibility for extended functionality.",
     ],
-    href: "",
+    githubUrl: "#", // Renamed from href
+    liveUrl: "#",   // Added new prop
     logo: "",
     image: "/assets/projects/wordpress-theme.jpg",
     tags: [
@@ -195,7 +200,8 @@ export const myProjects = [
       "Added a quiz system with dynamic question generation and real-time grading.",
       "Integrated Stripe API for secure payment processing.",
     ],
-    href: "",
+    githubUrl: "#", // Renamed from href
+    liveUrl: "#",   // Added new prop
     logo: "",
     image: "/assets/projects/elearning.jpg",
     tags: [
