@@ -73,16 +73,16 @@ const HeroText = () => {
           <h1 className="text-4xl font-bold bg-linear-to-r from-white to-gray-300 bg-clip-text text-transparent">
             Hi, I'm <AuroraText>Soumabha</AuroraText>
           </h1>
-          <p className="text-2xl font-medium text-neutral-300">
+          <p className="text-2xl font-medium text-neutral-100 ">
             Aspiring Backend Software Engineer
           </p>
           <div className="space-y-2">
-            <p className="text-xl font-medium text-neutral-400">Crafting</p>
+            <p className="text-xl font-medium text-neutral-200">Crafting</p>
             <FlipWords
               words={words}
               className="font-black text-white text-5xl"
             />
-            <p className="text-2xl font-medium bg-linear-to-r from-neutral-300 to-neutral-500 bg-clip-text text-transparent">
+            <p className="text-2xl font-bold bg-linear-to-r from-neutral-50 to-neutral-100 bg-clip-text text-transparent">
               Web Solutions
             </p>
           </div>

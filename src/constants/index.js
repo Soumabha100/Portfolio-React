@@ -1,37 +1,41 @@
 export const myProjects = [
   {
     id: 1,
-    title: "E-commerce Platform",
+    title: "IntelliClass: AI-Powered Smart Classroom",
     description:
-      "Facilitates purchases from international websites like Amazon and eBay, allowing customers to shop from these sites and have products delivered domestically.",
+      "An intelligent, all-in-one educational platform for SIH 2025, replacing manual processes with a seamless, automated system and AI-driven student personalization.",
     subDescription: [
-      "Built a scalable application with ASP.NET Core MVC, integrating global platforms like Amazon for domestic delivery.",
-      "Implemented secure authentication and database management using ASP.NET Core Identity and Entity Framework Core.",
-      "Designed a responsive frontend with Tailwind CSS, enhancing user experience.",
-      "Added payment systems, localization, and product filtering for functionality improvements.",
+      "Decoupled architecture with a React/Vite web client, React Native mobile app, and a Node.js/Express RESTful API.",
+      "Features instant, secure QR code attendance, AI-personalized dashboards for students, and an integrated AI chatbot.",
+      "Provides comprehensive, role-based dashboards for Administrators, Teachers, and Parents to manage the entire academic ecosystem.",
+      "Built on the MERN stack (MongoDB, Express, React, Node) with React Native for the cross-platform mobile client.",
     ],
-    githubUrl: "#", // Renamed from href
-    liveUrl: "https://github.com/soumabha100/portfolio-react",   // Added new prop
-    logo: "",
-    image: "/assets/projects/accessories.jpg",
+    githubUrl: "https://github.com/Soumabha100/Smart-Classroom",
+    liveUrl: "https://intelii-class-client-side.onrender.com",
+    image: "/assets/projects/elearning.jpg", // Placeholder - Add your new image path here
     tags: [
       {
         id: 1,
-        name: "C#",
-        path: "/assets/logos/csharp.svg",
+        name: "React",
+        path: "/assets/logos/react.svg",
       },
       {
         id: 2,
-        name: ".Net",
-        path: "/assets/logos/dotnet.svg",
+        name: "React Native",
+        path: "/assets/logos/react-native.svg", // Reusing React logo
       },
       {
         id: 3,
-        name: "Ef Core",
-        path: "/assets/logos/efcore.png",
+        name: "Node.js",
+        path: "/assets/logos/javascript.svg", // Reusing JS logo for Node
       },
       {
         id: 4,
+        name: "MongoDB",
+        path: "/assets/logos/mongo.svg",
+      },
+      {
+        id: 5,
         name: "TailwindCSS",
         path: "/assets/logos/tailwindcss.svg",
       },
@@ -39,37 +43,31 @@ export const myProjects = [
   },
   {
     id: 2,
-    title: "Authentication & Authorization System",
+    title: "Space Biology Engine (NASA ISAC)",
     description:
-      "A secure authentication and authorization system using Auth0 for seamless user management.",
+      "The frontend for a NASA ISAC knowledge engine, summarizing 600+ biological publications for the NISAC2025 challenge.",
     subDescription: [
-      "Integrated Auth0 for authentication, supporting OAuth, JWT, and multi-factor authentication.",
-      "Implemented role-based access control (RBAC) for fine-grained user permissions.",
-      "Developed a React-based frontend with Tailwind CSS for a sleek user experience.",
-      "Connected to a secure SQLite database for user data storage.",
+      "Developed the complete frontend interface for the NASA ISAC knowledge engine, a tool for space biology research.",
+      "Engineered a responsive and accessible user interface using React to query and visualize data from over 600 biological publications.",
+      "Focused on creating an intuitive data exploration experience for researchers and scientists.",
+      "Built as a contribution to the NASA International Space Apps Challenge (NISAC) 2025.",
     ],
-    githubUrl: "#", // Renamed from href
-    liveUrl: "#",   // Added new prop
-    logo: "",
-    image: "/assets/projects/auth-system.jpg",
+    githubUrl: "https://github.com/Soumabha100/Space-Biology-Engine",
+    liveUrl: "#", // No live URL provided
+    image: "/assets/projects/blazor-app.jpg", // Placeholder - Add your new image path here
     tags: [
       {
         id: 1,
-        name: "Auth0",
-        path: "/assets/logos/auth0.svg",
-      },
-      {
-        id: 2,
         name: "React",
         path: "/assets/logos/react.svg",
       },
       {
-        id: 3,
-        name: "SQLite",
-        path: "/assets/logos/sqlite.svg",
+        id: 2,
+        name: "Vite.js",
+        path: "/assets/logos/vitejs.svg",
       },
       {
-        id: 4,
+        id: 3,
         name: "TailwindCSS",
         path: "/assets/logos/tailwindcss.svg",
       },
@@ -77,153 +75,76 @@ export const myProjects = [
   },
   {
     id: 3,
-    title: "Blazor Web App",
+    title: "X-Clone (Full-Stack MERN)",
     description:
-      "A modern, interactive web application built with Blazor WebAssembly and .NET Core.",
+      "A feature-rich, full-stack MERN social media app mirroring the core functionalities of X (Twitter), from a secure RESTful API to a dynamic, responsive frontend.",
     subDescription: [
-      "Developed a fully interactive Single Page Application (SPA) using Blazor WebAssembly.",
-      "Implemented API interactions using .NET Core for a robust backend.",
-      "Designed responsive UI components with Tailwind CSS for an enhanced UX.",
-      "Integrated SQLite for efficient client-side database storage.",
+      "Employs secure JWT Authentication stored in httpOnly cookies, protecting against XSS attacks.",
+      "Features a full social ecosystem: Tweet CRUD, liking, commenting, retweeting, and a personalized 'Following' feed.",
+      "Uses Redux Toolkit for optimistic UI updates and TanStack Query (React Query) for high-performance data caching.",
+      "Integrates Cloudinary for cloud-based image uploads for posts and user profiles.",
+      "Decoupled architecture with a React/Vite frontend (Vercel) and a Node.js/Express backend (Render)."
     ],
-    githubUrl: "#", // Renamed from href
-    liveUrl: "#",   // Added new prop
-    logo: "",
-    image: "/assets/projects/blazor-app.jpg",
+    githubUrl: "https://github.com/Soumabha100/X-clone",
+    liveUrl: "https://x-clone-api-soumabha.onrender.com",
+    image: "/assets/projects/auth-system.jpg", // Placeholder - Add your new image path here
     tags: [
       {
         id: 1,
-        name: "Blazor",
-        path: "/assets/logos/blazor.svg",
+        name: "React",
+        path: "/assets/logos/react.svg",
       },
       {
         id: 2,
-        name: ".NET Core",
-        path: "/assets/logos/dotnetcore.svg",
+        name: "Node.js",
+        path: "/assets/logos/javascript.svg", // Reusing JS logo for Node
       },
       {
         id: 3,
-        name: "SQLite",
-        path: "/assets/logos/sqlite.svg",
+        name: "MongoDB",
+        path: "/assets/logos/mongo.svg",
       },
       {
         id: 4,
         name: "TailwindCSS",
         path: "/assets/logos/tailwindcss.svg",
       },
-    ],
-  },
-  {
-    id: 4,
-    title: "C++ Game Engine",
-    description:
-      "A lightweight C++ game engine designed for 2D and 3D game development.",
-    subDescription: [
-      "Built a powerful rendering engine using OpenGL and C++.",
-      "Developed a physics engine with collision detection and particle effects.",
-      "Implemented a scripting system for easy game customization.",
-      "Optimized performance with multi-threading and efficient memory management.",
-    ],
-    githubUrl: "#", // Renamed from href
-    liveUrl: "#",   // Added new prop
-    logo: "",
-    image: "/assets/projects/game-engine.jpg",
-    tags: [
       {
-        id: 1,
-        name: "C++",
-        path: "/assets/logos/cplusplus.svg",
-      },
-      {
-        id: 2,
-        name: "C#",
-        path: "/assets/logos/csharp.svg",
-      },
-      {
-        id: 3,
-        name: "Git",
-        path: "/assets/logos/git.svg",
-      },
-      {
-        id: 4,
-        name: "Microsoft",
-        path: "/assets/logos/microsoft.svg",
-      },
-    ],
-  },
-  {
-    id: 5,
-    title: "WordPress Custom Theme",
-    description:
-      "A fully customizable WordPress theme optimized for performance and SEO.",
-    subDescription: [
-      "Developed a responsive WordPress theme using HTML5, CSS3, and JavaScript.",
-      "Integrated Tailwind CSS for modern styling and UI enhancements.",
-      "Optimized SEO and page speed using Vite.js for fast builds.",
-      "Implemented custom widgets and plugin compatibility for extended functionality.",
-    ],
-    githubUrl: "#", // Renamed from href
-    liveUrl: "#",   // Added new prop
-    logo: "",
-    image: "/assets/projects/wordpress-theme.jpg",
-    tags: [
-      {
-        id: 1,
-        name: "WordPress",
-        path: "/assets/logos/wordpress.svg",
-      },
-      {
-        id: 2,
-        name: "HTML5",
-        path: "/assets/logos/html5.svg",
-      },
-      {
-        id: 3,
-        name: "CSS3",
-        path: "/assets/logos/css3.svg",
-      },
-      {
-        id: 4,
+        id: 5,
         name: "Vite.js",
         path: "/assets/logos/vitejs.svg",
       },
     ],
   },
   {
-    id: 6,
-    title: "Online Learning Platform",
+    id: 4,
+    title: "Digital World Clock",
     description:
-      "A web application that allows users to enroll in courses, watch video lectures, and take quizzes.",
+      "A streamlined, interactive tool displaying up to seven global time zones with an intuitive, user-friendly design and optimized, smooth performance.",
     subDescription: [
-      "Built using Blazor WebAssembly for a seamless SPA experience.",
-      "Implemented video streaming with Azure Media Services.",
-      "Added a quiz system with dynamic question generation and real-time grading.",
-      "Integrated Stripe API for secure payment processing.",
+      "Displays up to seven configurable global time zones simultaneously.",
+      "Features a clean, intuitive, and user-friendly interface.",
+      "Code is optimized for smooth, lightweight, and efficient performance.",
+      "Built with vanilla JavaScript, HTML5, and CSS3, and deployed via GitHub Pages.",
     ],
-    githubUrl: "#", // Renamed from href
-    liveUrl: "#",   // Added new prop
-    logo: "",
-    image: "/assets/projects/elearning.jpg",
+    githubUrl: "https://github.com/Soumabha100/Digital-World-Clock",
+    liveUrl: "https://soumabha100.github.io/Digital-World-Clock/",
+    image: "/assets/projects/accessories.jpg", // Placeholder - Add your new image path here
     tags: [
       {
         id: 1,
-        name: "Blazor",
-        path: "/assets/logos/blazor.svg",
+        name: "HTML5",
+        path: "/assets/logos/html5.svg",
       },
       {
         id: 2,
-        name: "Azure",
-        path: "/assets/logos/azure.svg",
+        name: "CSS3",
+        path: "/assets/logos/css3.svg",
       },
       {
         id: 3,
-        name: "Stripe",
-        path: "/assets/logos/stripe.svg",
-      },
-      {
-        id: 4,
-        name: "TailwindCSS",
-        path: "/assets/logos/tailwindcss.svg",
+        name: "JavaScript",
+        path: "/assets/logos/javascript.svg",
       },
     ],
   },
@@ -249,39 +170,27 @@ export const mySocials = [
 
 export const experiences = [
   {
-    title: "Software Developer",
-    job: "Security & Defense Projects",
-    year: "2021-2023", // Renamed from 'date'
-    duration: "May 2021 - October 2023", // New field for months
+    title: "Portfolio Development",
+    job: "Personal Project",
+    year: "2025-Present",
+    duration: "September 2025 - Present",
     contents: [
-      "Enhanced application security and developed new features, adhering to standards set by the Passive Defense Organization and National Cyberspace Center.",
-      "Designed and implemented intuitive map interfaces using MapsUI, enhancing user experience and enabling seamless interactive map integration.",
-      "Developed applications for industrial automation, leveraging C++ and the Fatek API for PLC communication.",
-      "Enhanced responsiveness and usability of applications using Windows Forms and WPF frameworks.",
-      "Executed XML to SVG conversions using X-DOM, ensuring dynamic and efficient data visualization.",
+      "Developing a high-performance personal portfolio from scratch using React, Vite, and Tailwind CSS.",
+      "Implementing complex 3D animations and interactivity using React Three Fiber and Three.js.",
+      "Integrating Framer Motion for a fluid, professional user experience with page transitions and micro-interactions.",
+      "Focused on production-level optimization, including code-splitting (React.lazy), asset compression, and security best practices.",
     ],
   },
   {
-    title: "Back-End Developer",
-    job: "Car Manufacture",
-    year: "2023-2024", // Renamed from 'date'
-    duration: "November 2023 - December 2024", // New field for months
+    title: "Full Stack Web Developer Intern (MERN)",
+    job: "ExcelR (Internship)",
+    year: "2025",
+    duration: "July 2025 - August 2025",
     contents: [
-      "Engineered systems for large-scale data ingestion and analysis, ensuring efficient data processing and storage.",
-      "Developed back-end systems enabling vehicle-to-cloud communication for telemetry, diagnostics, and remote control:",
-      "✅ Implemented secure APIs, following ISO 26262 automotive safety standards.",
-      "✅ Ensured data privacy for customers and partners through industry-compliant protocols.",
-      "✅ Delivered remote features like over-the-air updates, real-time tracking, and remote start capabilities.",
-    ],
-  },
-  {
-    title: "Freelance Developer",
-    job: "Self-Employed",
-    year: "2025-Present", // Renamed from 'date'
-    duration: "January 2025 - Present", // New field for months
-    contents: [
-      "Created a personal portfolio using Three.js, React, Vite, and WebAPI to showcase technical expertise.",
-      "Continuously enhancing technical skills and expanding expertise in modern web development and back-end technologies.",
+      "Gained hands-on experience building scalable, real-world projects using the MERN stack (MongoDB, Express.js, React, Node.js).",
+      "Developed full-stack solutions, applying both foundational and advanced concepts of web development.",
+      "Enhanced backend and database skills for robust, secure application delivery.",
+      "Practiced end-to-end problem-solving, team collaboration, and essential industry practices in a professional environment.",
     ],
   },
 ];
