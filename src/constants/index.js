@@ -12,7 +12,7 @@ export const myProjects = [
     ],
     githubUrl: "https://github.com/Soumabha100/Smart-Classroom",
     liveUrl: "https://intelii-class-client-side.onrender.com",
-    image: "/assets/projects/elearning.jpg", // Placeholder - Add your new image path here
+    image: "/assets/projects/IntelliClass.webp", 
     tags: [
       {
         id: 1,
@@ -87,7 +87,7 @@ export const myProjects = [
     ],
     githubUrl: "https://github.com/Soumabha100/X-clone",
     liveUrl: "https://x-clone-api-soumabha.onrender.com",
-    image: "/assets/projects/auth-system.jpg", // Placeholder - Add your new image path here
+    image: "/assets/projects/X-Clone.webp",
     tags: [
       {
         id: 1,
@@ -129,7 +129,7 @@ export const myProjects = [
     ],
     githubUrl: "https://github.com/Soumabha100/Digital-World-Clock",
     liveUrl: "https://soumabha100.github.io/Digital-World-Clock/",
-    image: "/assets/projects/accessories.jpg", // Placeholder - Add your new image path here
+    image: "/assets/projects/Digital-World Clock.webp",
     tags: [
       {
         id: 1,
