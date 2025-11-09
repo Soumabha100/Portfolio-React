@@ -2,6 +2,9 @@ import React, { Suspense } from 'react';
 import Navbar from './Sections/Navbar';
 import Hero from './Sections/Hero'; // Hero loads immediately
 
+// FIX: Change the import from '/next' to '/react'
+import { Analytics } from "@vercel/analytics/react"
+
 // LAZY LOAD only the sections "below the fold"
 const About = React.lazy(() => import('./Sections/About'));
 const Projects = React.lazy(() => import('./Sections/Projects'));
@@ -15,6 +18,7 @@ const App = () => {
       {/* Navbar and Hero load immediately */}
       <Navbar />
       <Hero /> 
+      <Analytics/>
 
       <Suspense fallback={null}>
         <About />
